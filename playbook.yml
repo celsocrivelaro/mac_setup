@@ -1,4 +1,6 @@
 ---
 - hosts: all
+  vars:
+    - user: crivelaro
   roles:
-    - role: fish-shell
+    - { role: fish-shell, user: crivelaro }

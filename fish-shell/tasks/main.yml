@@ -9,4 +9,4 @@
   become: true
 
 - name: Set fish as default shell
-  user: name=crivelaro shell=/usr/local/bin/fish
+  user: name={{ user }} shell=/usr/local/bin/fish
