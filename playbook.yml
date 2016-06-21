@@ -5,3 +5,4 @@
   roles:
     - { role: fish-shell, user: crivelaro }
     - role: vagrant
+    - role: git

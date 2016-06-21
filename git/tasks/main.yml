@@ -1,0 +1,10 @@
+---
+- name: install configurations
+  package:
+    name: git
+    state: head
+
+- name: set git configurations
+  template:
+    src: gitconfig.j2
+    dest: "{{ ansible_env.HOME }}/.gitconfig"
