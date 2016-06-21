@@ -6,3 +6,4 @@
     - { role: fish-shell, user: crivelaro }
     - role: vagrant
     - role: git
+    - role: vim

@@ -1,0 +1,181 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Syntastic
+Bundle 'https://github.com/scrooloose/syntastic.git'
+
+" NerdTree
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+
+" some markdown support
+Bundle 'https://github.com/plasticboy/vim-markdown.git'
+
+" full path fuzzy search
+Bundle 'kien/ctrlp.vim'
+
+" Vim tab session
+Bundle 'https://github.com/xolox/vim-misc'
+Bundle 'https://github.com/xolox/vim-session'
+
+" git tools
+Bundle 'tpope/vim-fugitive'
+
+" Ruby on Rails
+Bundle 'https://github.com/vim-ruby/vim-ruby.git'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-endwise'
+Bundle 'skalnik/vim-vroom'
+" Rspec
+Bundle 'thoughtbot/vim-rspec'
+
+Bundle 'terryma/vim-multiple-cursors'
+
+" Start Screen
+Bundle 'mhinz/vim-startify'
+
+" Color scheme
+Plugin 'w0ng/vim-hybrid'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+let g:syntastic_ruby_checkers = ['rubocop']
+
+" Color scheme
+set background=dark
+colorscheme hybrid
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+else
+  set autoindent		" always set autoindenting on
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+if has('langmap') && exists('+langnoremap')
+  " Prevent that the langmap option applies to characters that result from a
+  " mapping.  If unset (default), this may break plugins (but it's backward
+  " compatible).
+  set langnoremap
+endif
+
+" set swapfile
+" set dir=~/tmp
+" set nobackup
+set wrap
+
+" Tabs
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Set number lines / relative
+set number
+set relativenumber
+
+" Modified but not saved
+set warn
+
+" Directory to swap files
+" set directory=$HOME/.vim/swapfiles
+
+" Remove trailing spaces
+autocmd FileType c,python,java,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+autocmd Filetype ruby setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
+
+" Save file
+map <Esc><Esc> :w<CR>
+
+" NERDTree configs
+map <C-n> :NERDTreeToggle<CR>
+" map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+" Reload changes to .vimrc automatically
+autocmd BufWritePost  ~/.vimrc source ~/.vimrc
+
+" Restore session on starting Vim
+autocmd VimEnter * NERDTree "Open nerdtree on vim opening
+" autocmd BufWinEnter * NERDTreeMirror "Open nerdtree on new tab
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_new_tab=1
+let g:nerdtree_tabs_autoclose=1
+let g:nerdtree_tabs_open_on_console_startup=1
+
+map <S-Right> :tabnext<CR>
+map <S-Left>  :tabprevious<CR>
+map <S-N>     :tabnew<CR>
+map <S-Q>   :tabclose<CR>
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+let g:session_autosave='yes'
