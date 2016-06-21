@@ -4,3 +4,4 @@
     - user: crivelaro
   roles:
     - { role: fish-shell, user: crivelaro }
+    - role: vagrant
