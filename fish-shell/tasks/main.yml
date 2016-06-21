@@ -7,6 +7,11 @@
 - name: set fish as one of bashes
   command: "echo '/usr/local/bin/fish' | sudo tee -a /etc/shells"
   become: true
+  when: ansible_os_family == "Darwin"
+
+- name: get fish location
+  shell: which fish
+  register: fish_location
 
 - name: Set fish as default shell
-  user: name={{ user }} shell=/usr/local/bin/fish
+  user: name={{ user }} shell={{ fish_location.stdout }}
