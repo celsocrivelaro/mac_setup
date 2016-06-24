@@ -158,7 +158,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd BufWritePost  ~/.vimrc source ~/.vimrc
 
 " Restore session on starting Vim
-autocmd VimEnter * NERDTree "Open nerdtree on vim opening
+autocmd VimEnter * NERDTree | wincmd p "Open nerdtree on vim opening
 
 map <S-Right> :tabnext<CR>
 map <S-Left>  :tabprevious<CR>
