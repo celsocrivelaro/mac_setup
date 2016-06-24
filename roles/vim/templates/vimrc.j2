@@ -61,26 +61,40 @@ set backspace=indent,eol,start
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set incsearch              " Highlight while searching with / or ?.
+set hlsearch               " Keep matches highlighted.
 
+set ttyfast                " Faster redrawing.
+set lazyredraw             " Only redraw when necessary.
+
+set splitbelow             " Open new windows below the current window.
+set splitright             " Open new windows right of the current window.
+
+set cursorline             " Find the current line quickly.
+set wrapscan               " Searches wrap around end-of-file.
+set report      =0         " Always report changed lines.
+set synmaxcol   =200       " Only highlight the first 200 columns.
+set wrap
+
+" Tabs
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Set number lines / relative
+set number
+
+" Modified but not saved
+set warn
 " Don't use Ex mode, use Q for formatting
 map Q gq
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+syntax on
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -125,25 +139,6 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
-" set swapfile
-" set dir=~/tmp
-" set nobackup
-set wrap
-
-" Tabs
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-" Set number lines / relative
-set number
-set relativenumber
-
-" Modified but not saved
-set warn
-
-" Directory to swap files
-" set directory=$HOME/.vim/swapfiles
 
 " Remove trailing spaces
 autocmd FileType c,python,java,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -156,18 +151,12 @@ map <Esc><Esc> :w<CR>
 
 " NERDTree configs
 map <C-n> :NERDTreeToggle<CR>
-" map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " Reload changes to .vimrc automatically
 autocmd BufWritePost  ~/.vimrc source ~/.vimrc
 
 " Restore session on starting Vim
 autocmd VimEnter * NERDTree "Open nerdtree on vim opening
-" autocmd BufWinEnter * NERDTreeMirror "Open nerdtree on new tab
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_open_on_new_tab=1
-let g:nerdtree_tabs_autoclose=1
-let g:nerdtree_tabs_open_on_console_startup=1
 
 map <S-Right> :tabnext<CR>
 map <S-Left>  :tabprevious<CR>
@@ -179,5 +168,3 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
-let g:session_autosave='yes'
