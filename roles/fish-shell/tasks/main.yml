@@ -2,7 +2,7 @@
 - name: install fish shell
   package: 
     name: fish 
-    state: head
+    state: installed
 
 - name: set fish as one of bashes
   command: "echo '/usr/local/bin/fish' | sudo tee -a /etc/shells"

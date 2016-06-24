@@ -2,7 +2,7 @@
 - name: install configurations
   package:
     name: git
-    state: head
+    state: installed
 
 - name: set git configurations
   template:
