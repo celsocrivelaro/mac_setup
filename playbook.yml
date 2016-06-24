@@ -7,3 +7,4 @@
     - role: vagrant
     - role: git
     - role: vim
+  #    - role: fasd

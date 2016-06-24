@@ -1,0 +1,6 @@
+---
+- name: install oh-my-fish extension
+  shell: curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+
+- name: install omf plugins
+  shell: omf install python ruby 
