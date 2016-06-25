@@ -38,6 +38,9 @@ Bundle 'skalnik/vim-vroom'
 " Rspec
 Bundle 'thoughtbot/vim-rspec'
 
+" Haskell
+Bundle "https://github.com/neovimhaskell/haskell-vim"
+
 Bundle 'terryma/vim-multiple-cursors'
 
 " Start Screen
@@ -77,6 +80,9 @@ set synmaxcol   =200       " Only highlight the first 200 columns.
 set wrap
 
 set clipboard=unnamed      " clipboard integration
+
+set showmode               " Show current mode in command-line.
+set showcmd                " Show already typed keys when more are expected.
 
 " Tabs
 set tabstop=2
@@ -170,3 +176,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" Startify options
+let g:startify_session_autoload = 1
