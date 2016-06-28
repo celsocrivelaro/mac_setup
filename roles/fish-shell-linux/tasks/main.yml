@@ -4,11 +4,6 @@
     name: fish
     state: installed
 
-- name: set fish as one of bashes
-  command: "echo '/usr/local/bin/fish' | sudo tee -a /etc/shells"
-  become: true
-  when: ansible_os_family == "Darwin"
-
 - name: get fish location
   shell: which fish
   register: fish_location

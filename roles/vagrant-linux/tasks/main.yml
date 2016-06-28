@@ -1,0 +1,13 @@
+---
+- name: install virtualbox
+  package:
+    name: virtualbox
+    state: installed
+
+- name: install virtualbox dkms
+  package:
+    name: virtualbox-dkms
+    state: installed
+
+- name: install vagrant
+  apt: deb=https://releases.hashicorp.com/vagrant/1.8.4/vagrant_1.8.4_x86_64.deb

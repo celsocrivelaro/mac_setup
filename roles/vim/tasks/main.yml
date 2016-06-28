@@ -2,7 +2,7 @@
 - name: install vim
   package: 
     name: vim
-    state: head
+    state: installed
  
 - name: install Vundle pkg dependency
   git: 
