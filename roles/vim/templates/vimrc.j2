@@ -41,10 +41,10 @@ Bundle 'thoughtbot/vim-rspec'
 " Haskell
 Bundle "https://github.com/neovimhaskell/haskell-vim"
 
-Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'terryma/vim-multiple-cursors'
 
 " Start Screen
-Bundle 'mhinz/vim-startify'
+"Bundle 'mhinz/vim-startify'
 
 " Color scheme
 Plugin 'w0ng/vim-hybrid'
@@ -55,8 +55,10 @@ filetype plugin indent on    " required
 let g:syntastic_ruby_checkers = ['rubocop']
 
 " Color scheme
-set background=dark
-colorscheme hybrid
+"set background=dark
+"colorscheme hybrid
+
+let g:session_autoload = 'no'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -177,5 +179,3 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-" Startify options
-let g:startify_session_autoload = 1
