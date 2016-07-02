@@ -13,6 +13,16 @@
   template:
     src: vimrc.j2
     dest: "{{ ansible_env.HOME }}/.vimrc"
+  tags: 
+    - update
 
 - name: install vundle dependencies
   shell: vim +PluginInstall +PluginClean +qall
+  tags:
+     - update
+
+- name: install cmake
+  homebrew: name=cmake state=latest
+ 
+- name: install YouCompleteMe
+  shell: "{{ ansible_env.HOME }}/.vim/bundle/youcompleteme/install.py --clang-completer"

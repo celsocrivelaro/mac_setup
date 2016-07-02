@@ -17,9 +17,6 @@ Bundle 'https://github.com/scrooloose/syntastic.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 
-" some markdown support
-Bundle 'https://github.com/plasticboy/vim-markdown.git'
-
 " full path fuzzy search
 Bundle 'kien/ctrlp.vim'
 
@@ -27,8 +24,18 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'https://github.com/xolox/vim-misc'
 Bundle 'https://github.com/xolox/vim-session'
 
+" AutoComplete
+Bundle 'valloric/youcompleteme'
+
+" Vim Status/Tabline improver
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 " git tools
 Bundle 'tpope/vim-fugitive'
+
+" Markdowm
+Bundle 'https://github.com/plasticboy/vim-markdown.git'
 
 " Ruby on Rails
 Bundle 'https://github.com/vim-ruby/vim-ruby.git'
@@ -41,13 +48,6 @@ Bundle 'thoughtbot/vim-rspec'
 " Haskell
 Bundle "https://github.com/neovimhaskell/haskell-vim"
 
-"Bundle 'terryma/vim-multiple-cursors'
-
-" Start Screen
-"Bundle 'mhinz/vim-startify'
-
-Bundle 'valloric/youcompleteme'
-
 " Color scheme
 Plugin 'w0ng/vim-hybrid'
 
@@ -57,8 +57,8 @@ filetype plugin indent on    " required
 let g:syntastic_ruby_checkers = ['rubocop']
 
 " Color scheme
-"set background=dark
-"colorscheme hybrid
+set background=dark
+colorscheme hybrid
 
 let g:session_autoload = 'no'
 
