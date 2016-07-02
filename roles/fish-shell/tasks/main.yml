@@ -15,3 +15,10 @@
 
 - name: Set fish as default shell
   user: name={{ user }} shell={{ fish_location.stdout }}
+
+- name: set fish configurations
+  template:
+    src: fish.prompt.j2
+    dest: "{{ ansible_env.HOME }}/.config/fish/functions/fish_prompt.fish"
+  tags: 
+    - update
