@@ -1,0 +1,10 @@
+---
+- name: install rbenv
+  package: 
+    name: rbenv
+    state: installed
+
+- name: set rbenv in fish shell
+  template:
+    src: rbenv.fish.j2
+    dest: "{{ ansible_env.HOME }}/.config/fish/functions/rbenv.fish"
