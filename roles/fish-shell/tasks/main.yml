@@ -18,7 +18,7 @@
 
 - name: set fish configurations
   template:
-    src: fish.prompt.j2
+    src: fish_prompt.fish.j2
     dest: "{{ ansible_env.HOME }}/.config/fish/functions/fish_prompt.fish"
   tags: 
     - update
