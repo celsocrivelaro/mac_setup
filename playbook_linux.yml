@@ -1,8 +1,0 @@
----
-- hosts: all
-  roles:
-   - { role: fish-shell-linux, user: crivelaro, become: true }
-   - role: vagrant-linux
-     become: true
-   - role: git
-   - role: vim

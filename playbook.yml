@@ -3,6 +3,7 @@
   vars:
     - user: crivelaro
   roles:
+    - role: apps
     - { role: fish-shell, user: crivelaro }
     - role: vagrant
     - role: git

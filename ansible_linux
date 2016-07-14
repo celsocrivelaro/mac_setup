@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ansible-playbook playbook_linux.yml -f 10 --ask-sudo-pass
