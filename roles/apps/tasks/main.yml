@@ -11,6 +11,7 @@
     - skype
     - gimp
     - adium
+    - limechat
   tags:
     - update
 
@@ -25,6 +26,17 @@
     - cmake
     - python
     - python3
+    - leiningen # Clojure
+    - rbenv
   tags:
     - update
 
+- name: install libs
+  homebrew: name={{ item }}
+  with_items:
+    - libmagic  # image magic
+    - libxml2
+    - libyaml
+    - openssl
+  tags:
+    - update
