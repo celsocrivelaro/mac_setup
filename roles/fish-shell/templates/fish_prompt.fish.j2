@@ -43,7 +43,10 @@ function fish_prompt
   set -g __fish_git_prompt_show_informative_status true 
 
   set -l ruby_version $red(_rb_prompt)
- 
+
+  # set ls colors
+  set -Ux LSCOLORS Gxfxcxdxbxegedabagacad
+
   # Line 1
   echo -n $white'╭─'$hotpink$USER$white'@'$orange$__fish_prompt_hostname$white':'$limegreen(prompt_pwd)$turquoise
   __fish_git_prompt " (%s)"$ruby_version

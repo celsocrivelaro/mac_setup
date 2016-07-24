@@ -3,8 +3,14 @@
   shell: curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 
 - name: install omf plugins
-  shell: omf install python ruby fasd
+  shell: omf install {{ item }}  
   args:
     chdir: '{{ ansible_env.HOME }}'
+  with_items:
+    - python
+    - ruby
+    - fasd
+    - es # theme
   tags: 
     - update
+
