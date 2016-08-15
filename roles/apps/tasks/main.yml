@@ -12,6 +12,7 @@
     - gimp
     - adium
     - limechat
+    - httpie
   tags:
     - update
 
