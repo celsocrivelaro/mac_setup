@@ -3,7 +3,13 @@
   package: 
     name: vim
     state: installed
- 
+
+- name: set swap directory
+  file: 
+    path: "{{ ansible_env.HOME }}/.vim/swapfiles"
+    state: directory
+    mode: 0755
+
 - name: install Vundle pkg dependency
   git: 
     repo: git@github.com:VundleVim/Vundle.vim.git 
