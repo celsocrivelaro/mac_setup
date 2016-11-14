@@ -29,6 +29,7 @@
     - leiningen # Clojure
     - rbenv
     - httpie
+    - direnv # http://direnv.net/
   tags:
     - update
 
