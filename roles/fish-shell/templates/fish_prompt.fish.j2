@@ -45,7 +45,7 @@ function fish_prompt
   set -l ruby_version $red(_rb_prompt)
 
   # set ls colors
-  set -Ux LSCOLORS Gxfxcxdxbxegedabagacad
+  set -x LSCOLORS Gxfxcxdxbxegedabagacad
 
   # Line 1
   echo -n $white'╭─'$hotpink$USER$white'@'$orange$__fish_prompt_hostname$white':'$limegreen(prompt_pwd)$turquoise
