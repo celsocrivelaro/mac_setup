@@ -172,7 +172,7 @@ endif
 
 " Remove trailing spaces
 autocmd FileType c,python,java,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
-
+autocmd BufRead,BufNewFile *.hbs setfiletype html
 autocmd Filetype ruby setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
 
