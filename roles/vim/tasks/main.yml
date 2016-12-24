@@ -1,7 +1,7 @@
 ---
-- name: install vim
+- name: install nvim
   package: 
-    name: vim
+    name: neovim/neovim/neovim
     state: installed
 
 - name: set swap directory
@@ -18,12 +18,15 @@
 - name: set vim configurations
   template:
     src: vimrc.j2
-    dest: "{{ ansible_env.HOME }}/.vimrc"
+    dest: "{{ ansible_env.HOME }}/.config/nvim/init.vim"
   tags: 
     - update
 
+- name: install python dependency
+  shell: pip install neovim 
+
 - name: install vundle dependencies
-  shell: vim +PluginInstall +PluginClean +qall
+  shell: nvim +PluginInstall +PluginClean +qall
   tags:
      - update
 
