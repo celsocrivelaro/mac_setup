@@ -9,9 +9,6 @@
     - caffeine
     - spectacle
     - skype
-    - gimp
-    - adium
-    - limechat
   tags:
     - update
 
@@ -19,16 +16,13 @@
   homebrew: name={{ item }}
   with_items:
     - tmux
-    - fasd
     - ansible
     - git
     - git-extras
     - cmake
     - python
     - python3
-    - leiningen # Clojure
     - rbenv
-    - httpie
     - direnv # http://direnv.net/
   tags:
     - update

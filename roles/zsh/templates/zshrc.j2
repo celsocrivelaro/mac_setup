@@ -1,0 +1,40 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/crivelaro/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="maran"
+
+# sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="dd.mm.yyyy"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+#plugins=(osx git rails ruby docker docker-compose bundler git-extras rbenv)
+plugins=(osx git rails ruby docker docker-compose git-extras rbenv git-flow gitfast vim-mode zsh-autosuggestions zsh-syntax-highlighting)
+
+# User configuration
+
+export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+source $ZSH/oh-my-zsh.sh
+
+eval "$(rbenv init -)"
+#eval "$(docker-machine env default)"
+
+alias docker_rm_containers='docker rm --force $(docker ps -qa)'
+alias docker_rm_images='docker rmi $(docker images -q)'
+
+alias lk='ls -lha'
+alias -g G='| grep'
+
+export VIM="~/.vim"

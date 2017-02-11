@@ -4,9 +4,7 @@
     - user: crivelaro
   roles:
     - role: apps
-    - { role: fish-shell, user: crivelaro }
-    - role: vagrant
+    - { role: zsh, user: crivelaro }
     - role: git
     - role: vim
     - role: rbenv
-  #    - role: fasd
