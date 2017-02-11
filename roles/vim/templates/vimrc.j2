@@ -47,22 +47,13 @@ Bundle 'skalnik/vim-vroom'
 " Rspec
 Bundle 'thoughtbot/vim-rspec'
 
-" Haskell
-Bundle "https://github.com/neovimhaskell/haskell-vim"
-
-"Bundle 'terryma/vim-multiple-cursors'
-
-" Autocomplete
-Bundle 'valloric/youcompleteme'
-
-" Easy commenter
-Bundle 'scrooloose/nerdcommenter'
-
-" Color scheme
-Plugin 'w0ng/vim-hybrid'
-
 " Ack
 Plugin 'mileszs/ack.vim'
+
+" Colorscheme
+Plugin 'jnurmine/Zenburn'
+" https://github.com/altercation/vim-colors-solarized
+Plugin 'altercation/vim-colors-solarized'
 
 " Ember
 Plugin 'joukevandermaas/vim-ember-hbs'
@@ -70,8 +61,11 @@ Plugin 'joukevandermaas/vim-ember-hbs'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" YouCompleteMe Mapping
-imap <Tab> <C-P>
+syntax enable
+colorscheme solarized
+let g:solarized_termcolors = 256
+let g:solarized_termtrans = 1
+set background=dark
 
 let g:syntastic_ruby_checkers = ['rubocop']
 
@@ -123,8 +117,6 @@ map Q gq
 if has('mouse')
   set mouse=a
 endif
-
-syntax on
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -181,6 +173,8 @@ map <Esc><Esc> :w<CR>
 
 " NERDTree configs
 map <C-n> :NERDTreeToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_synchronize_view = 1
 
 " Reload changes to .vimrc automatically
 autocmd BufWritePost  ~/.vimrc source ~/.vimrc
