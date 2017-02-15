@@ -3,8 +3,8 @@
   vars:
     - user: crivelaro
   roles:
-    - role: apps
-    - { role: zsh, user: crivelaro }
-    - role: git
-    - role: vim
+    #- role: apps
+    #- { role: zsh, user: crivelaro }
+      #- role: git
+    #- role: vim
     - role: rbenv

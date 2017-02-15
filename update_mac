@@ -1,6 +1,5 @@
 #!/bin/bash
 
+echo "Update configs"
 ansible-playbook playbook.yml -f 10 --tags "update"
 
-#brew update
-#brew upgrade

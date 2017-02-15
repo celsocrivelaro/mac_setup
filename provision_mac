@@ -4,4 +4,4 @@ brew update
 brew tap caskroom/cask
 
 echo "Install Ansible playbook"
-ansible-playbook playbook.yml -f 10 --ask-sudo-pass
+ansible-playbook -i "localhost," -c local playbook.yml -f 10 --ask-sudo-pass

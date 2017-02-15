@@ -15,6 +15,11 @@
     repo: git@github.com:VundleVim/Vundle.vim.git 
     dest: "{{ ansible_env.HOME }}/.vim/bundle/Vundle.vim"
 
+- name: make nvim config dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/nvim"
+    state: directory
+    
 - name: set vim configurations
   template:
     src: vimrc.j2
@@ -32,6 +37,3 @@
 
 - name: install cmake
   homebrew: name=cmake state=latest
- 
-- name: install YouCompleteMe
-  shell: "{{ ansible_env.HOME }}/.vim/bundle/youcompleteme/install.py --clang-completer"
