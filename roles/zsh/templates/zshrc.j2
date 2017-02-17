@@ -23,7 +23,6 @@ HIST_STAMPS="dd.mm.yyyy"
 plugins=(osx git rails ruby docker docker-compose git-extras rbenv git-flow gitfast vim-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 # User configuration
-
 export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
@@ -31,15 +30,22 @@ source $ZSH/oh-my-zsh.sh
 eval "$(rbenv init -)"
 #eval "$(docker-machine env default)"
 
+# Docker aliases
 alias docker_rm_containers='docker rm --force $(docker ps -qa)'
 alias docker_rm_images='docker rmi $(docker images -q)'
 
-alias ls='ls -lha'
-alias -g G='| grep'
-alias v='nvim'
+# personal repos
 alias blog='cd $HOME/repos/personal/blog; nvim'
 alias changelog='cd $HOME/repos/personal/changelog; nvim'
 alias diario='cd $HOME/repos/personal/diario; nvim'
 
+# aliases
+alias top='htop'
+alias df='df -h'
+alias ls='ls -lha'
+alias -g G='| grep'
+alias v='nvim'
+
+# nvim
 export VIM="~/.vim"
 export VIMRUNTIME='/usr/local/share/vim/vim80'

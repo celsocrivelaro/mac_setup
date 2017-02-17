@@ -1,0 +1,9 @@
+---
+- name: set zsh prompt configurations
+  template:
+    src: up.j2
+    dest: "/usr/local/bin/up"
+    mode: 'u=x,g=x,o=x'
+  tags: 
+    - update
+

@@ -5,6 +5,7 @@
   roles:
     - role: apps
     - { role: zsh, user: crivelaro }
+    - role: update 
     - role: git
     - role: vim
     - role: rbenv
