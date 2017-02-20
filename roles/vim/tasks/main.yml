@@ -1,7 +1,12 @@
 ---
+- name: tap homebrew
+  homebrew_tap:
+    name: neovim/neovim
+    state: present
+
 - name: install nvim
   package: 
-    name: neovim/neovim/neovim
+    name: neovim
     state: installed
 
 - name: set swap directory

@@ -12,12 +12,11 @@
     - iterm2
     - spotify
     - virtualbox
-  tags:
-    - update
 
 - name: install apps
   homebrew: name={{ item }}
   with_items:
+    - vim
     - tmux
     - ansible
     - git
@@ -28,8 +27,6 @@
     - rbenv
     - direnv # http://direnv.net/
     - htop
-  tags:
-    - update
 
 - name: install libs
   homebrew: name={{ item }}
@@ -38,5 +35,3 @@
     - libxml2
     - libyaml
     - openssl
-  tags:
-    - update
