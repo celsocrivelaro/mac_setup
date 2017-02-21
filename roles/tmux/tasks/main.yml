@@ -1,0 +1,7 @@
+---
+- name: set tmux configurations
+  template:
+    src: tmux.j2
+    dest: "{{ ansible_env.HOME }}/.tmux.conf"
+  tags: 
+    - update

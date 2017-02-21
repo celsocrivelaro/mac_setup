@@ -9,3 +9,4 @@
     - role: git
     - role: vim
     - role: rbenv
+    - role: tmux

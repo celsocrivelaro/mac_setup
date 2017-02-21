@@ -1,0 +1,10 @@
+unbind C-b
+set -g prefix C-a
+set -g default-terminal "xterm"
+set -g default-command /bin/zsh
+
+# bind a reload key
+bind R source-file ~/.tmux.conf \; display-message "Config reloaded.."
+
+# invoke reattach-to-user-namespace every time a new window/pane opens
+set-option -g default-command "reattach-to-user-namespace -l zsh"

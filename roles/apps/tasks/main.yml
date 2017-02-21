@@ -27,6 +27,7 @@
     - rbenv
     - direnv # http://direnv.net/
     - htop
+    - reattach-to-user-namespace
 
 - name: install libs
   homebrew: name={{ item }}
