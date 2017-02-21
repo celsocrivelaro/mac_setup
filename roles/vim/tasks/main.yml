@@ -9,6 +9,9 @@
     name: neovim
     state: installed
 
+- name: install ack
+  homebrew: name=ack
+
 - name: set swap directory
   file: 
     path: "{{ ansible_env.HOME }}/.vim/swapfiles"
