@@ -180,6 +180,10 @@ map <Esc><Esc> :w<CR>
 map <C-n> :NERDTreeToggle<CR>
 " let g:nerdtree_tabs_open_on_console_startup=1
 " let g:nerdtree_tabs_synchronize_view = 1
+map <S-Right> :tabnext<CR>
+map <S-Left>  :tabprevious<CR>
+map <S-N>     :tabnew<CR>
+map <S-Q>   :tabclose<CR>
 
 " Reload changes to .vimrc automatically
 autocmd BufWritePost  ~/.vimrc source ~/.vimrc
@@ -187,10 +191,6 @@ autocmd BufWritePost  ~/.vimrc source ~/.vimrc
 " Restore session on starting Vim
 autocmd VimEnter * NERDTree | wincmd p "Open nerdtree on vim opening
 
-map <S-Right> :tabnext<CR>
-map <S-Left>  :tabprevious<CR>
-map <S-N>     :tabnew<CR>
-map <S-Q>   :tabclose<CR>
 
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
