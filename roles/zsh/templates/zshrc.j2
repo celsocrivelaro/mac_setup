@@ -44,6 +44,7 @@ alias docker_rm_images='docker rmi $(docker images -q)'
 alias blog='cd $HOME/repos/personal/blog; nvim'
 alias changelog='cd $HOME/repos/personal/changelog; nvim'
 alias diario='cd $HOME/repos/personal/diario; nvim'
+alias mac_setup='cd $HOME/repos/personal/mac_setup; nvim'
 
 # aliases
 alias top='htop'
@@ -55,6 +56,9 @@ alias v='nvim'
 # nvim
 export VIM="~/.vim"
 export VIMRUNTIME='/usr/local/share/vim/vim80'
+
+# ruby/rails
+alias spec="bundle exec rspec spec"
 
 # tmux
 export ZSH_TMUX_AUTOSTART=false
