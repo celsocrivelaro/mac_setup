@@ -28,6 +28,7 @@
     - direnv # http://direnv.net/
     - htop
     - reattach-to-user-namespace
+    - jq # json tool
 
 - name: install libs
   homebrew: name={{ item }}
