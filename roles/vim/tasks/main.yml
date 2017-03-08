@@ -4,11 +4,6 @@
     name: neovim/neovim
     state: present
 
-- name: install nvim
-  package: 
-    name: neovim
-    state: installed
-
 - name: install ack
   homebrew: name=ack
 
@@ -22,11 +17,6 @@
   git: 
     repo: git@github.com:VundleVim/Vundle.vim.git 
     dest: "{{ ansible_env.HOME }}/.vim/bundle/Vundle.vim"
-
-- name: make nvim config dir
-  file:
-    path: "{{ ansible_env.HOME }}/.config/nvim"
-    state: directory
     
 - name: set vim configurations
   template:
@@ -35,13 +25,7 @@
   tags: 
     - update
 
-- name: install python dependency
-  shell: pip install neovim 
-
 - name: install vundle dependencies
-  shell: nvim +PluginInstall +PluginClean +qall
+  shell: vim +PluginInstall +PluginClean +qall
   tags:
      - update
-
-- name: install cmake
-  homebrew: name=cmake state=latest
