@@ -58,8 +58,8 @@ Plugin 'jnurmine/Zenburn'
 " https://github.com/altercation/vim-colors-solarized
 Plugin 'altercation/vim-colors-solarized'
 
-" Ember
-Plugin 'joukevandermaas/vim-ember-hbs'
+" Syntax for Jade JS
+Plugin 'digitaltoad/vim-pug'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -172,6 +172,10 @@ autocmd FileType c,python,java,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufRead,BufNewFile *.hbs setfiletype html
 autocmd Filetype ruby setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
+
+augroup filetypedetect
+    au BufRead,BufNewFile *.ts set filetype=javascript
+augroup END
 
 " Save file
 map <Esc><Esc> :w<CR>
