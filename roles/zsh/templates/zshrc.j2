@@ -22,7 +22,7 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_ITERM2=true
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 #plugins=(osx git rails ruby docker docker-compose bundler git-extras rbenv)
-plugins=(osx git rails ruby docker docker-compose git-extras rbenv git-flow gitfast vim-mode zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(osx git rails ruby docker docker-compose git-extras git-flow gitfast vim-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -32,9 +32,6 @@ source $ZSH/oh-my-zsh.sh
 # LS colors
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-eval "$(rbenv init -)"
-#eval "$(docker-machine env default)"
 
 # Docker aliases
 alias docker_rm_containers='docker rm --force $(docker ps -qa)'
@@ -80,6 +77,9 @@ export ZSH_TMUX_AUTOCONNECT=false
 #    fi
 #fi
 
-for file in ~/.alias_*; do
-  source "$file"
-done
+if [ -e "~/.alias_*" ]
+then
+  for file in ~/.alias_*; do
+    source "$file"
+  done
+fi
