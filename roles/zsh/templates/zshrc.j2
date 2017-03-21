@@ -1,3 +1,11 @@
+if [ -e "$(ls $HOME/.alias_*)" ]
+then
+  for file in $(ls $HOME/.alias_*)
+  do
+    source $file
+  done
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -78,9 +86,3 @@ export ZSH_TMUX_AUTOCONNECT=false
 #    fi
 #fi
 
-if [ -e "~/.alias_*" ]
-then
-  for file in ~/.alias_*; do
-    source "$file"
-  done
-fi
