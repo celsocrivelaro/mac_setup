@@ -29,6 +29,9 @@
     - htop
     - reattach-to-user-namespace
     - jq # json tool
+    - gnu-sed 
+  tags: 
+    - update
 
 - name: install libs
   homebrew: name={{ item }}
@@ -37,3 +40,5 @@
     - libxml2
     - libyaml
     - openssl
+  tags: 
+    - update
