@@ -21,7 +21,7 @@
 - name: set vim configurations
   template:
     src: vimrc.j2
-    dest: "{{ ansible_env.HOME }}/.config/nvim/init.vim"
+    dest: "{{ ansible_env.HOME }}/.vimrc"
   tags: 
     - update
 
