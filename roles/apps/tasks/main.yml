@@ -30,6 +30,7 @@
     - reattach-to-user-namespace
     - jq # json tool
     - gnu-sed 
+    - markdown 
   tags: 
     - update
 
