@@ -26,8 +26,6 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="dd.mm.yyyy"
 
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_ITERM2=true
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 #plugins=(osx git rails ruby docker docker-compose bundler git-extras rbenv)
 plugins=(osx git rails ruby docker docker-compose git-extras git-flow gitfast vim-mode zsh-autosuggestions zsh-syntax-highlighting)
@@ -71,21 +69,9 @@ export VIMRUNTIME='/usr/local/share/vim/vim80'
 alias spec="bundle exec rspec spec"
 
 # tmux
-export ZSH_TMUX_AUTOSTART=false
+export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOSTART_ONCE=false
 export ZSH_TMUX_FIXTERM=false
-export ZSH_TMUX_ITERM2=false
+export ZSH_TMUX_ITERM2=true
 export ZSH_TMUX_AUTOCONNECT=false
-#export TERM="xterm-256color"
-#alias tmux='TERM=screen-256color-bce tmux'
-#if [[ -z "$TMUX" ]]
-#then
-#    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
-#    if [[ -z "$ID" ]]
-#    then
-#        tmux new-session
-#    else
-#        tmux attach-session -t "$ID"
-#    fi
-#fi
 
