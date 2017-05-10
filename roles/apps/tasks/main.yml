@@ -31,6 +31,7 @@
     - jq # json tool
     - gnu-sed 
     - markdown 
+    - nvm
   tags: 
     - update
 
