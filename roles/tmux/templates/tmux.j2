@@ -21,4 +21,6 @@ set -g base-index 1
 bind R source-file ~/.tmux.conf \; display-message "Config reloaded.."
 
 # invoke reattach-to-user-namespace every time a new window/pane opens
-# set-option -g default-command "reattach-to-user-namespace -l zsh"
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+setw -g mouse on
