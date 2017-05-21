@@ -46,6 +46,8 @@ Bundle 'tpope/vim-endwise'
 Bundle 'skalnik/vim-vroom'
 " Rspec
 Bundle 'thoughtbot/vim-rspec'
+" Tmux
+Bundle 'jgdavey/tslime.vim'
 
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
@@ -203,3 +205,8 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_runner = "os_x_iterm2"
+
+" Tmux - tslime
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
