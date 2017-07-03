@@ -210,3 +210,10 @@ let g:rspec_runner = "os_x_iterm2"
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+
+set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ }
