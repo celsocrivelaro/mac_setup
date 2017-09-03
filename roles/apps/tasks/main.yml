@@ -32,6 +32,7 @@
     - gnu-sed 
     - markdown 
     - nvm
+    - exa
   tags: 
     - update
 
