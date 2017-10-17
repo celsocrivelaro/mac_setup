@@ -33,6 +33,7 @@
     - markdown 
     - nvm
     - exa
+    - httpie
   tags: 
     - update
 
