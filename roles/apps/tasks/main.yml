@@ -24,16 +24,15 @@
     - cmake
     - python
     - python3
-    - rbenv
     - direnv # http://direnv.net/
     - htop
     - reattach-to-user-namespace
     - jq # json tool
     - gnu-sed 
     - markdown 
-    - nvm
     - exa
     - httpie
+    - asdf # https://github.com/asdf-vm/asdf
   tags: 
     - update
 
@@ -44,5 +43,14 @@
     - libxml2
     - libyaml
     - openssl
+    - coreutils
+    - automake 
+    - autoconf 
+    - openssl
+    - libyaml
+    - readline 
+    - libxslt 
+    - libtool 
+    - unixodbc
   tags: 
     - update
