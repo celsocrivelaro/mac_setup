@@ -26,6 +26,6 @@
     - update
 
 - name: install vundle dependencies
-  shell: vim +PluginInstall +PluginClean +qall
+  shell: vim +PluginInstall +qall
   tags:
      - update
