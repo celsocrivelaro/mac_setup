@@ -32,6 +32,7 @@
     - exa
     - httpie
     - zsh-syntax-highlighting
+    - fd 
       #- asdf # https://github.com/asdf-vm/asdf
   tags: 
     - update
