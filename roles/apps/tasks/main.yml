@@ -33,6 +33,7 @@
     - httpie
     - zsh-syntax-highlighting
     - fd 
+    - telnet 
       #- asdf # https://github.com/asdf-vm/asdf
   tags: 
     - update
