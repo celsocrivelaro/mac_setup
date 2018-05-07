@@ -10,7 +10,7 @@
 - name: default key bindings 
   template:
     src: default_key_binding.j2
-    dest: "/home/crivelaro/Library/KeyBindings/DefaultKeyBinding.dict"
+    dest: "{{ ansible_env.HOME }}/Library/KeyBindings/DefaultKeyBinding.dict"
     mode: 'u=rw,g=r,o=r'
   tags: 
     - update
