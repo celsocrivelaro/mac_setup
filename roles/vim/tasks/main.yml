@@ -1,9 +1,4 @@
 ---
-- name: tap homebrew
-  homebrew_tap:
-    name: neovim/neovim
-    state: present
-
 - name: install ack
   homebrew: name=ack
 
@@ -26,6 +21,6 @@
     - update
 
 - name: install vundle dependencies
-  shell: vim +PluginInstall +qall
+  shell: vim +PluginInstall
   tags:
      - update

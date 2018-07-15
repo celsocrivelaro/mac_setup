@@ -11,6 +11,7 @@
     - skype
     - spotify
     - virtualbox
+    - boostnote
 
 - name: install apps
   homebrew: name={{ item }}
