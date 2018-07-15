@@ -28,7 +28,7 @@ HIST_STAMPS="dd.mm.yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 #plugins=(osx git rails ruby docker docker-compose bundler git-extras rbenv)
-plugins=(osx git rails git-extras git-flow gitfast vim-mode zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(osx git rails git-extras git-flow gitfast vim-mode zsh-autosuggestions zsh-syntax-highlighting docker docker-compose)
 
 # syntax highlight
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -63,7 +63,7 @@ alias sed='gsed'
 
 # nvim
 export VIM="~/.vim"
-export VIMRUNTIME='/usr/local/share/vim/vim80'
+export VIMRUNTIME='/usr/local/share/vim/vim81'
 
 # ruby/rails
 alias spec="bundle exec rspec spec"
@@ -75,11 +75,3 @@ export ZSH_TMUX_FIXTERM=false
 export ZSH_TMUX_ITERM2=true
 export ZSH_TMUX_AUTOCONNECT=false
 
-# nvm
-#export NVM_DIR="$HOME/.nvm"
-#source $(brew --prefix nvm)/nvm.sh
-
-# rbenv 
-#eval "$(rbenv init -)"
-#. $HOME/.asdf/asdf.sh
-#. $HOME/.asdf/completions/asdf.bash
