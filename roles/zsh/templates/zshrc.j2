@@ -28,10 +28,10 @@ HIST_STAMPS="dd.mm.yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 #plugins=(osx git rails ruby docker docker-compose bundler git-extras rbenv)
-plugins=(osx git rails git-extras git-flow gitfast vim-mode zsh-autosuggestions zsh-syntax-highlighting docker docker-compose)
+plugins=(osx git rails git-extras vim-mode zsh-autosuggestions docker docker-compose)
 
 # syntax highlight
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -42,36 +42,29 @@ source $ZSH/oh-my-zsh.sh
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-# Docker aliases
-alias docker_rm_containers='docker rm --force $(docker ps -qa)'
-alias docker_rm_images='docker rmi $(docker images -q)'
-
-# personal repos
-alias blog='cd $HOME/repos/personal/blog'
-alias changelog='cd $HOME/repos/personal/changelog; v README.md'
-alias diario='cd $HOME/repos/personal/diario; v'
-alias mac_setup='cd $HOME/repos/personal/mac_setup'
-
 # aliases
 alias top='htop'
 alias df='df -h'
-alias ls='exa -lha'
 alias -g G='| grep'
 alias v='vim'
 alias json='jq'
 alias sed='gsed'
+alias ls="exa -la --git --time-style long-iso"
 
-# nvim
-export VIM="~/.vim"
-export VIMRUNTIME='/usr/local/share/vim/vim81'
+alias p="ipython"
+alias cat="bat"
+alias ls="exa -la --git --time-style long-iso"
+alias dc="docker-compose"
+alias p="ipython"
+alias cat="bat"
 
 # ruby/rails
 alias spec="bundle exec rspec spec"
 
-# tmux
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOSTART_ONCE=false
-export ZSH_TMUX_FIXTERM=false
-export ZSH_TMUX_ITERM2=true
-export ZSH_TMUX_AUTOCONNECT=false
+generate_list(){
+  for mp4_file in *.mp4; do 
+    echo "file '$(pwd)/$mp4_file'"
+  done
+}
 
+alias merge_videos="generate_list > fileList.txt && ffmpeg -f concat -safe 0 -i $(pwd)/fileList.txt -c copy output.mp4"
