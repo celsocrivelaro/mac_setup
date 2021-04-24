@@ -1,6 +1,6 @@
 unbind C-b
 set -g prefix C-a
-set -g default-command /bin/zsh
+#set -g default-command /bin/zsh
 
 # Automatically set window title
 set-window-option -g automatic-rename on
@@ -21,8 +21,8 @@ bind r source-file ~/.tmux.conf \; display-message "Config reloaded.."
 bind C-a send-prefix
 
 # splitting panes with | and -
-bind \ split-window -h
-bind - split-window -v
+bind '\' split-window -h
+bind '-' split-window -v
 
 # moving between panes with Prefix h,j,k,l
 bind h select-pane -L 
@@ -39,8 +39,9 @@ bind -r L resize-pane -R 6
 # invoke reattach-to-user-namespace every time a new window/pane opens
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 
-#setw -g mouse on
 set -g mouse on
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
 
 #### COLOUR
 # vim colors
@@ -48,9 +49,7 @@ set -g mouse on
 set -g default-terminal "screen-256color"
 
 # default statusbar colors
-set-option -g status-bg colour235 #base02
-set-option -g status-fg colour136 #yellow
-set-option -g status-attr default
+set-option -g status-style fg=colour136,bg=colour235
 
 set-option -g status-justify centre
 
@@ -58,21 +57,18 @@ setw -g monitor-activity on
 set -g visual-activity on
 
 # default window title colors
-set-window-option -g window-status-fg colour166 # orange
-set-window-option -g window-status-bg default
-#set-window-option -g window-status-attr dim
+set-window-option -g window-status-style fg=default,bg=default
 
 # active window title colors
-set-window-option -g window-status-current-fg white
-set-window-option -g window-status-current-bg red
+set-window-option -g window-status-current-style fg=white,bg=red
 
 # active pane colors
 set-option -g pane-border-style fg=green,bg=black
 set-option -g pane-active-border-style fg=colour166,bg=default
 
 # message text
-set-option -g message-bg colour235 #base02
-set-option -g message-fg colour166 #orange
+# bg base02, fg orange
+set-option -g message-style fg=colour166,bg=colour235
 
 # pane number display
 set-option -g display-panes-active-colour colour33 #blue
@@ -80,3 +76,4 @@ set-option -g display-panes-colour colour166 #orange
 
 # clock
 set-window-option -g clock-mode-colour colour64 #green
+
